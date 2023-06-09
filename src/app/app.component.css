@@ -1,0 +1,12 @@
+.spacer {
+  flex: 1 1 auto;
+}
+button {
+  width: 5%;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+  background-color: white;
+  color: black;
+}

@@ -1,0 +1,29 @@
+<div class="add-comment-container" *ngIf="selectedPost">
+  <mat-card class="add-comment-card">
+    <mat-card-content>
+      <h2><u>Add Comment</u></h2>
+      <h3>
+        <b>{{ selectedPost?.title }}</b>
+      </h3>
+      <p>{{ selectedPost?.body }}</p>
+      <div class="comment-container">
+        <mat-form-field appearance="outline" class="add-comment-field">
+          <textarea
+            matInput
+            placeholder="Add a comment"
+            name="comment"
+            [(ngModel)]="newComment"
+          ></textarea>
+        </mat-form-field>
+        <button
+          mat-icon-button
+          color="primary"
+          class="edit-button"
+          (click)="addComment(newComment, selectedPost.id)"
+        >
+          <mat-icon class="edit-icon">add</mat-icon>
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

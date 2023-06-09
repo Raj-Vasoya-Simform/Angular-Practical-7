@@ -1,0 +1,16 @@
+<h2 class="add-post-heading"><u>Add Post</u></h2>
+<hr>
+<mat-card class="add-post-card">
+  <mat-card-content>
+    <mat-form-field class="add-post-input" appearance="outline">
+      <input matInput placeholder="Title" [(ngModel)]="newPost.title" required>
+    </mat-form-field>
+    <mat-form-field class="add-post-input" appearance="outline">
+      <textarea matInput placeholder="Body" [(ngModel)]="newPost.body" required></textarea>
+    </mat-form-field>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-raised-button color="primary" (click)="addPost()" class="save-button">Add</button>
+    <button mat-raised-button routerLink="/posts" class="cancel-button">Cancel</button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,71 @@
+<h2 class="post-list-heading"><u>Post List</u></h2>
+<hr />
+
+<div class="post-list-container">
+  <ng-container>
+    <mat-card class="post-card" *ngFor="let post of posts">
+      <div class="post-header">
+        <a class="post-title" [routerLink]="['/posts', post.id]">{{
+          post.title | titlecase
+        }}</a>
+        <button
+          mat-icon-button
+          color="primary"
+          class="menu-button"
+          [matMenuTriggerFor]="menu"
+        >
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="updatePost(post.id)">
+            <mat-icon>edit</mat-icon>
+            <span>Edit Post</span>
+          </button>
+          <button mat-menu-item (click)="deletePost(post.id)">
+            <mat-icon>delete</mat-icon>
+            <span>Delete Post</span>
+          </button>
+        </mat-menu>
+      </div>
+      <mat-card-content>
+        <a class="post-link" [routerLink]="['/posts', post.id]">{{
+          post.title | titlecase
+        }}</a>
+      </mat-card-content>
+
+      <div class="comment-info">
+        <ul *ngIf="!isCommentMatchingPostId(post.id)">
+          <li>
+            <a
+              [routerLink]="['/posts', post.id]"
+              style="text-decoration: none; color: black"
+              >0 People commented on the post.</a
+            >
+          </li>
+        </ul>
+
+        <ul *ngIf="post && isCommentMatchingPostId(post.id)">
+          <li>
+            <a
+              [routerLink]="['/posts', post.id]"
+              style="text-decoration: none; color: black"
+            >
+              {{ commentCount }} People commented on the post.</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <mat-card-actions align="end">
+        <button
+          mat-icon-button
+          color="accent"
+          (click)="addComment(post.id)"
+          class="edit-button"
+        >
+          <mat-icon class="edit-icon">comment</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </ng-container>
+</div>

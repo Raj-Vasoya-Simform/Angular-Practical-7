@@ -1,0 +1,56 @@
+.add-comment-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.add-comment-card {
+  width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.add-comment-card h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.add-comment-card p {
+  margin: 5px 0;
+}
+
+.add-comment-field {
+  display: flex;
+  align-items: center;
+}
+
+.add-comment-field textarea {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.add-comment-button {
+  margin-top: 10px;
+  width: fit-content;
+}
+.comment-container {
+  display: flex;
+  align-items: center;
+}
+
+.add-comment-field {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.edit-button {
+  margin-left: 10px;
+}
+
+.edit-icon {
+  font-size: 30px;
+  text-align: center;
+}

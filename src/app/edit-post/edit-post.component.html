@@ -1,0 +1,30 @@
+<h2 class="edit-post-heading"><u>Edit Post</u></h2>
+<hr>
+<mat-card *ngIf="post" class="edit-post-card">
+  <mat-card-content>
+    <mat-form-field class="edit-post-input" appearance="outline">
+      <input matInput placeholder="Title" [(ngModel)]="post.title" required />
+    </mat-form-field>
+    <mat-form-field class="edit-post-input" appearance="outline">
+      <textarea
+        matInput
+        placeholder="Body"
+        [(ngModel)]="post.body"
+        required
+      ></textarea>
+    </mat-form-field>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="updatePost()"
+      class="save-button"
+    >
+      Save
+    </button>
+    <button mat-raised-button routerLink="/posts" class="cancel-button">
+      Cancel
+    </button>
+  </mat-card-actions>
+</mat-card>

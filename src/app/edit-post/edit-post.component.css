@@ -1,0 +1,25 @@
+.edit-post-heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.edit-post-card {
+  width: 400px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.edit-post-input {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.save-button {
+  margin-right: 8px;
+}
+
+.cancel-button {
+  color: #ff0000;
+}
